@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StockPro - Trading Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Global Loading Screen -->
+  <div id="loading-screen" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="auth-container" style="display: flex; flex-direction: row; align-items: stretch; height: 100vh;">
+    <!-- Image Section -->
+    <div style="flex: 1; background: url('trading_hero.png') center/cover no-repeat; position: relative;">
+      <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%); display: flex; flex-direction: column; justify-content: center; padding: 50px;">
+        <h1 style="font-size: 3.5rem; margin-bottom: 20px; text-shadow: 0 4px 10px rgba(0,0,0,0.5);"><i class="fas fa-chart-line text-success"></i> StockPro</h1>
+        <p style="font-size: 1.5rem; color: var(--text-secondary); max-width: 500px;">The next generation of AI-powered trading. Get live charts, market sentiment, and expert predictions all in one place.</p>
+      </div>
+    </div>
+    
+    <!-- Auth Section -->
+    <div style="flex: 1; display: flex; align-items: center; justify-content: center; background-color: var(--bg-primary);">
+      <!-- Login Form -->
+      <div id="login-box" class="auth-card">
+      <div class="auth-header">
+        <i class="fas fa-chart-line"></i>
+        <h2>StockPro Login</h2>
+        <p class="text-muted">Enter your credentials to access your terminal</p>
+      </div>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" class="form-control" required placeholder="user@example.com">
+        </div>
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" class="form-control" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+      </form>
+      <div class="toggle-auth">
+        Don't have an account? <span id="show-signup">Sign up</span>
+      </div>
+    </div>
+
+    <!-- Signup Form (Hidden by default) -->
+    <div id="signup-box" class="auth-card hidden">
+      <div class="auth-header">
+        <i class="fas fa-user-plus"></i>
+        <h2>Create Account</h2>
+        <p class="text-muted">Start trading today</p>
+      </div>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="signup-name">Full Name</label>
+          <input type="text" id="signup-name" class="form-control" required placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label for="signup-email">Email</label>
+          <input type="email" id="signup-email" class="form-control" required placeholder="user@example.com">
+        </div>
+        <div class="form-group">
+          <label for="signup-password">Password</label>
+          <input type="password" id="signup-password" class="form-control" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-success" style="width: 100%;">Create Account</button>
+      </form>
+      <div class="toggle-auth">
+        Already have an account? <span id="show-login">Login</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- Motivational Section -->
+  <section class="motivational-section">
+    <h2>Why Trade With Us?</h2>
+    <div class="motivational-grid">
+      <div class="motivational-box">
+        <i class="fas fa-brain"></i>
+        <h3>AI-Powered Insights</h3>
+        <p class="text-muted">Our expert system analyzes thousands of data points to give you actionable trading recommendations instantly.</p>
+      </div>
+      <div class="motivational-box">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Live Market Data</h3>
+        <p class="text-muted">Powered by Alpha Vantage, get real-time price updates, volume analysis, and historical charts.</p>
+      </div>
+      <div class="motivational-box">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Risk-Free Simulator</h3>
+        <p class="text-muted">Practice your strategies with our paper trading portfolio without risking real money.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <section class="parallax-section">
+    <div class="parallax-overlay"></div>
+    <div class="parallax-content">
+      <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Master The Markets</h2>
+      <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8;">"The stock market is a device for transferring money from the impatient to the patient." Experience the thrill of trading backed by the logic of machine learning. Start your journey with StockPro today.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <!-- Premium Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2><i class="fas fa-chart-line text-success"></i> StockPro</h2>
+        <p>The next generation of AI-powered trading. Empowering retail investors with institutional-grade tools and real-time market intelligence.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="market.html">Market Explorer</a></li>
+          <li><a href="portfolio.html">Paper Trading</a></li>
+          <li><a href="ai-recommendation.html">AI Predictions</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Risk Warning</a></li>
+          <li><a href="about.html">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 StockPro AI Trading Platform. All rights reserved. Data provided by Alpha Vantage.</p>
+      <p style="margin-top: 10px; font-weight: 500; color: var(--accent-primary);">
+        Managed & Developed by: Rajkumar Meshram, Omkar Mulik, & Gaurav Mane
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

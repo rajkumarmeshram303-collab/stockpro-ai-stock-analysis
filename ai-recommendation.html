@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Expert System - StockPro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Global Loading Screen -->
+  <div id="loading-screen" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-chart-line"></i> StockPro
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="market.html"><i class="fas fa-globe"></i> Market</a></li>
+        <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+        <li><a href="ai-recommendation.html"><i class="fas fa-robot"></i> AI Expert</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h2>AI Recommendation Engine</h2>
+        <div class="user-info">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span id="user-name">Trader</span>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <div class="grid grid-2" style="margin-bottom: 20px;">
+          <!-- Controls -->
+          <div class="card">
+            <h3><i class="fas fa-cogs"></i> Run Analysis</h3>
+            <p class="text-muted" style="margin-bottom: 15px;">Select a stock to run through the Rule-Based Expert System.</p>
+            <div class="form-group">
+              <label for="ai-stock-select">Target Stock</label>
+              <select id="ai-stock-select" class="form-control"></select>
+            </div>
+            <button id="analyze-btn" class="btn btn-primary" style="width: 100%;"><i class="fas fa-search"></i> Evaluate</button>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-color); text-align: center;">
+              <h3 class="text-muted">Final Recommendation</h3>
+              <div id="ai-decision" style="font-size: 2rem; margin-top: 10px;">--</div>
+            </div>
+          </div>
+
+          <!-- Knowledge Base Rules Viewer -->
+          <div class="card">
+            <h3><i class="fas fa-book"></i> Knowledge Base (Rules)</h3>
+            <div class="rule-box">
+              <strong>Rule 1 (BUY):</strong><br>
+              IF Trend == 'increasing' AND Volume > 20M AND RSI < 70 THEN BUY
+            </div>
+            <div class="rule-box" style="border-left-color: var(--danger);">
+              <strong>Rule 2 (SELL):</strong><br>
+              IF Trend == 'decreasing' AND RSI > 70 THEN SELL
+            </div>
+            <div class="rule-box" style="border-left-color: var(--warning);">
+              <strong>Rule 3 (HOLD):</strong><br>
+              IF neither Rule 1 nor Rule 2 are triggered THEN HOLD
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Forward Chaining -->
+          <div class="card">
+            <h3><i class="fas fa-arrow-right"></i> Forward Chaining (Data-Driven)</h3>
+            <p class="text-muted" style="margin-bottom: 15px; font-size: 0.9rem;">Starts with facts (stock data) and applies rules to infer a conclusion.</p>
+            <div id="fc-output" class="logic-step" style="min-height: 150px; font-family: monospace;">
+              Waiting for analysis...
+            </div>
+          </div>
+
+          <!-- Backward Chaining -->
+          <div class="card">
+            <h3><i class="fas fa-arrow-left"></i> Backward Chaining (Goal-Driven)</h3>
+            <p class="text-muted" style="margin-bottom: 15px; font-size: 0.9rem;">Starts with the conclusion (goal) and traces back to prove it with facts.</p>
+            <div id="bc-output" class="logic-step" style="min-height: 150px; font-family: monospace;">
+              Waiting for analysis...
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Premium Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2><i class="fas fa-chart-line text-success"></i> StockPro</h2>
+        <p>The next generation of AI-powered trading. Empowering retail investors with institutional-grade tools and real-time market intelligence.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="market.html">Market Explorer</a></li>
+          <li><a href="portfolio.html">Paper Trading</a></li>
+          <li><a href="ai-recommendation.html">AI Predictions</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Risk Warning</a></li>
+          <li><a href="about.html">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 StockPro AI Trading Platform. All rights reserved. Data provided by Alpha Vantage.</p>
+      <p style="margin-top: 10px; font-weight: 500; color: var(--accent-primary);">
+        Managed & Developed by: Rajkumar Meshram, Omkar Mulik, & Gaurav Mane
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

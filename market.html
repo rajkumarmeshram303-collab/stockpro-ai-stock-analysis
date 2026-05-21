@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market - StockPro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Global Loading Screen -->
+  <div id="loading-screen" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-chart-line"></i> StockPro
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="market.html"><i class="fas fa-globe"></i> Market</a></li>
+        <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+        <li><a href="ai-recommendation.html"><i class="fas fa-robot"></i> AI Expert</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h2>Market</h2>
+        <div class="user-info">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span id="user-name">Trader</span>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <div class="card" style="margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h3><i class="fas fa-list"></i> Available Stocks</h3>
+            <div style="width: 300px;">
+              <input type="text" id="market-search" class="form-control" placeholder="Search by symbol or name...">
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Symbol</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Change (%)</th>
+                  <th>Volume</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="market-body">
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Premium Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2><i class="fas fa-chart-line text-success"></i> StockPro</h2>
+        <p>The next generation of AI-powered trading. Empowering retail investors with institutional-grade tools and real-time market intelligence.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="market.html">Market Explorer</a></li>
+          <li><a href="portfolio.html">Paper Trading</a></li>
+          <li><a href="ai-recommendation.html">AI Predictions</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Risk Warning</a></li>
+          <li><a href="about.html">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 StockPro AI Trading Platform. All rights reserved. Data provided by Alpha Vantage.</p>
+      <p style="margin-top: 10px; font-weight: 500; color: var(--accent-primary);">
+        Managed & Developed by: Rajkumar Meshram, Omkar Mulik, & Gaurav Mane
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

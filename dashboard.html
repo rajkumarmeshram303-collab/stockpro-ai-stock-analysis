@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - StockPro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Global Loading Screen -->
+  <div id="loading-screen" class="loading-overlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-chart-line"></i> StockPro
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="market.html"><i class="fas fa-globe"></i> Market</a></li>
+        <li><a href="portfolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+        <li><a href="ai-recommendation.html"><i class="fas fa-robot"></i> AI Expert</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <h2>Dashboard</h2>
+        <div class="user-info">
+          <i class="fas fa-user-circle fa-2x"></i>
+          <span id="user-name">Trader</span>
+        </div>
+      </header>
+
+      <section class="page-content">
+        <!-- Motivational Section with User Images -->
+        <div class="motivational-grid" style="margin-bottom: 40px; margin-top: 10px;">
+          <div class="motivational-box dashboard-img-box">
+            <img src="media__1776414176587.jpg" alt="Bitcoin Trading">
+            <div class="dashboard-img-content">
+              <h3>The Future of Finance</h3>
+              <p class="text-muted">Stay ahead of the curve with real-time crypto and stock insights.</p>
+            </div>
+          </div>
+          <div class="motivational-box dashboard-img-box">
+            <img src="media__1776414176610.jpg" alt="Mobile Trading">
+            <div class="dashboard-img-content">
+              <h3>Trade Anywhere</h3>
+              <p class="text-muted">Monitor your investments and execute trades seamlessly on the go.</p>
+            </div>
+          </div>
+          <div class="motivational-box dashboard-img-box">
+            <img src="media__1776414177216.jpg" alt="Crypto Charts">
+            <div class="dashboard-img-content">
+              <h3>Market Intelligence</h3>
+              <p class="text-muted">Leverage powerful analytics and AI to make informed decisions.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parallax Scroll Section -->
+        <div class="parallax-section" style="margin-bottom: 40px; border-radius: 10px; overflow: hidden; background-image: url('media__1776414177266.jpg'); height: 300px;">
+          <div class="parallax-overlay"></div>
+          <div class="parallax-content" style="padding: 20px;">
+            <h2 style="font-size: 2rem; margin-bottom: 10px;">Your Professional Terminal</h2>
+            <p style="color: var(--text-secondary);">Experience institutional-grade tools built for retail investors.</p>
+          </div>
+        </div>
+
+        <!-- Portfolio Summary -->
+        <div class="grid grid-3" style="margin-bottom: 20px;">
+          <div class="card">
+            <h3 class="text-muted"><i class="fas fa-wallet"></i> Cash Balance</h3>
+            <h2 id="balance-display">$0.00</h2>
+          </div>
+          <div class="card">
+            <h3 class="text-muted"><i class="fas fa-briefcase"></i> Holdings Value</h3>
+            <h2 id="holdings-value-display">$0.00</h2>
+          </div>
+          <div class="card">
+            <h3 class="text-muted"><i class="fas fa-chart-pie"></i> Total Value</h3>
+            <h2 id="total-value-display" class="text-success">$0.00</h2>
+          </div>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Chart -->
+          <div class="card" style="min-height: 400px;">
+            <h3><i class="fas fa-chart-area"></i> Live Market Overview</h3>
+            <canvas id="market-chart"></canvas>
+          </div>
+
+          <!-- Watchlist -->
+          <div class="card">
+            <h3><i class="fas fa-star"></i> Top Movers Watchlist</h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Symbol</th>
+                    <th>Price</th>
+                    <th>Change</th>
+                  </tr>
+                </thead>
+                <tbody id="watchlist-body">
+                  <!-- Populated by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <!-- Premium Footer -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2><i class="fas fa-chart-line text-success"></i> StockPro</h2>
+        <p>The next generation of AI-powered trading. Empowering retail investors with institutional-grade tools and real-time market intelligence.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-discord"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="market.html">Market Explorer</a></li>
+          <li><a href="portfolio.html">Paper Trading</a></li>
+          <li><a href="ai-recommendation.html">AI Predictions</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Legal</h3>
+        <ul>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Risk Warning</a></li>
+          <li><a href="about.html">About Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 StockPro AI Trading Platform. All rights reserved. Data provided by Alpha Vantage.</p>
+      <p style="margin-top: 10px; font-weight: 500; color: var(--accent-primary);">
+        Managed & Developed by: Rajkumar Meshram, Omkar Mulik, & Gaurav Mane
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
