@@ -226,7 +226,7 @@ function openStockModal(symbol) {
 }
 
 async function fetchAndRenderAlphaVantage(symbol, container, canvasId, isModal = false) {
-  const apiKey = 'X20LENP25AN15KFT';
+  const apiKey = '';
 
   try {
     // Fetch Time Series Data for Chart
